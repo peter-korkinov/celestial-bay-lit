@@ -120,6 +120,60 @@ File: Layout CSS
 .sidebar .sdb_holder{margin-bottom:50px;}
 .sidebar .sdb_holder:last-child{margin-bottom:0;}
 
+ /*Input Forms */
+form, form fieldset, form legend, form input, form textarea, form select {
+	display: block;
+	width: 400px;
+	border: none;
+	padding: 10px;
+	margin: 20px;
+}
+
+#login-page {
+	height: 400px;
+	width: 550px;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+form legend {
+	font-size: xx-large;
+	text-align: center;
+}
+
+form .btn {
+	width: 100px;
+	margin: 20px auto;
+	padding: 10px 20px 10px 20px;
+	display: block;
+	border-color: white;
+}
+
+form input {
+	color: #2814c8;
+}
+
+#root {
+	height: 100%;
+	min-height: max-content;
+}
+
+.cover {
+	min-height: 85vh;
+}
+
+.switch-msg {
+	/*margin: 10px 10px 10px 10px;*/
+	/*padding: 0 0 0 70px;*/
+	text-align: center;
+	font-weight: bolder;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 
 /* Footer
 --------------------------------------------------------------------------------------------------------------- */

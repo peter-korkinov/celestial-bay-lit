@@ -5,6 +5,7 @@ import {logout} from "./api/data.js";
 
 import {guestTemplate, loggedInTemplate} from "./views/navigation.js";
 import {homePage} from "./views/home.js";
+import {loginPage} from "./views/login.js";
 
 
 function updateNavBar() {
@@ -38,7 +39,7 @@ const root = document.getElementById('root');
 page(decorateContext)
 page('/home', homePage);
 page('/', '/home');
-// page('/login', loginPage);
+page('/login', loginPage);
 // page('/register', registerPage);
 // page('/my-books', myBooksPage);
 // page('/create', createPage);
