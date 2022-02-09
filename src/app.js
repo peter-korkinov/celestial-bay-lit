@@ -1,4 +1,5 @@
 import {isLogged, getUserData} from "./common/util.js";
+import {notify} from "./common/notify.js";
 import { page, render } from "./lib.js";
 import {logout} from "./api/data.js";
 
@@ -20,16 +21,16 @@ function decorateContext(ctx, next) {
     next();
 }
 
-// async function onLogout() {
-//     try {
-//         const message = await logout();
-//         updateNavBar();
-//         page('/home');
-//         // notify('info', message);
-//     } catch (err) {
-//         // notify('error', err);
-//     }
-// }
+async function onLogout() {
+    try {
+        const message = await logout();
+        updateNavBar();
+        page('/home');
+        notify('info', message);
+    } catch (err) {
+        notify('error', err);
+    }
+}
 
 const navBar = document.getElementById('mainav');
 const root = document.getElementById('root');
