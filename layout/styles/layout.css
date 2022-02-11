@@ -130,7 +130,7 @@ form, form fieldset, form legend, form input, form textarea, form select {
 }
 
 #login-page {
-	height: 400px;
+	height: auto;
 	width: 550px;
 	margin: auto;
 	left: 0;
@@ -146,7 +146,7 @@ form legend {
 }
 
 form .btn {
-	width: 100px;
+	width: auto;
 	margin: 20px auto;
 	padding: 10px 20px 10px 20px;
 	display: block;
