@@ -1,17 +1,17 @@
 function getUserData() {
-    return JSON.parse(sessionStorage.getItem('userData'));
+    return JSON.parse(localStorage.getItem('userData'));
 }
 
 function setUserData(data) {
-    sessionStorage.setItem('userData', JSON.stringify(data));
+    localStorage.setItem('userData', JSON.stringify(data));
 }
 
 function clearUserData() {
-    sessionStorage.removeItem('userData');
+    localStorage.removeItem('userData');
 }
 
 function isLogged() {
-    return !(sessionStorage.getItem('userData') === null);
+    return !(localStorage.getItem('userData') === null);
 }
 
 export {

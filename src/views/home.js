@@ -13,8 +13,8 @@ const homeTemplate = () => html`
             <p>Biggest selection of galaxies in the world</p>
             <footer>
                 <ul class="nospace inline pushright">
-                    <li><a class="btn" href="#">Log in</a></li>
-                    <li><a class="btn inverse" href="#">Register</a></li>
+                    <li><a class="btn" href="/login">Log in</a></li>
+                    <li><a class="btn inverse" href="/register">Register</a></li>
                 </ul>
             </footer>
         </article>

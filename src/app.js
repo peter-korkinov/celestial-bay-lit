@@ -42,9 +42,7 @@ page('/home', homePage);
 page('/', '/home');
 page('/login', loginPage);
 page('/register', registerPage);
-// page('/my-books', myBooksPage);
 // page('/create', createPage);
-// page('/details/:id', loadLikes, isLiked, loadRecord, detailsPage);
 // page('/edit/:id', loadRecord, editPage);
 
 updateNavBar();
