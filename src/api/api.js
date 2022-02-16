@@ -11,7 +11,7 @@ async function request (url, options) {
                 clearUserData();
             }
             const error = await response.json();
-            throw new Error(error.message);
+            throw new Error(JSON.stringify(error));
         }
 
         try {
@@ -37,10 +37,10 @@ function createOptions(method = 'get', data) {
         options.body = JSON.stringify(data);
     }
 
-    // const userData = getUserData();
-    // if(userData != null) {
-    //     options.headers['X-Authorization'] = userData.token;
-    // }
+    const userData = getUserData();
+    if(userData != null) {
+        options.headers['Authorization'] = 'Token ' + userData.token;
+    }
 
     return options;
 }
@@ -78,21 +78,24 @@ async function del(url) {
 }
 
 async function login(email, password) {
-    const response = await request('/users/login/', createOptions('post', {email, password}));
+    const response = await request('/api/token/', createOptions('post', {email, password}));
     const userData = {
         email: response.email,
         id: response.id,
-        token: response.accessToken
+        accessToken: response.access,
+        refreshToken: response.refresh
     };
     setUserData(userData);
 }
 
 async function register(email, password) {
-    const response = await request('/users/register/', createOptions('post', {email, password}));
+    const registerResponse = await request('/users/register/', createOptions('post', {email, password}));
+    const authResponse = await request('/api/token/', createOptions('post', {email, password}));
     const userData = {
-        email: response.email,
-        id: response.id,
-        token: response.accessToken
+        email: registerResponse.email,
+        id: registerResponse.id,
+        accessToken: authResponse.access,
+        refreshToken: authResponse.refresh
     }
     setUserData(userData);
 }

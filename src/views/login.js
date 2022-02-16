@@ -19,7 +19,10 @@ function loginPage(ctx) {
                 ctx.updateNavBar();
                 ctx.page.redirect('/home');
             } catch (err) {
-                notify('error', err);
+                if (err.toString() === 'Error: {"detail":"No active account found with the given credentials"}') {
+
+                    notify('error', 'username or password is incorrect');
+                }
             }
         } else {
             notify('error', 'All fields are required!');

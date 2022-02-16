@@ -5,7 +5,6 @@ const notificationSection = document.getElementById('notifications');
 
 function notify(type, message) {
     render(notificationTemplate(type, message), notificationSection);
-    setTimeout(() => {render(notificationTemplate(), notificationSection);}, 10000);
 }
 
 const notificationTemplate = (type, message) => html`
