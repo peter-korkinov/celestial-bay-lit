@@ -78,7 +78,7 @@ async function del(url) {
 }
 
 async function login(email, password) {
-    const response = await request('/api/token/', createOptions('post', {email, password}));
+    const response = await request('/users/token/', createOptions('post', {email, password}));
     const userData = {
         email: response.email,
         id: response.id,
@@ -90,7 +90,7 @@ async function login(email, password) {
 
 async function register(email, password) {
     const registerResponse = await request('/users/register/', createOptions('post', {email, password}));
-    const authResponse = await request('/api/token/', createOptions('post', {email, password}));
+    const authResponse = await request('/users/token/', createOptions('post', {email, password}));
     const userData = {
         email: registerResponse.email,
         id: registerResponse.id,
